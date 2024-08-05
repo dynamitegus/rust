@@ -1,10 +1,9 @@
-
 fn main() {
-    println!("Hello, world!");
+    let x = plus_one(5);
 
-    balling()
+    println!("the value of x is {x}")
 }
 
-fn balling() {
-    println!("WE BALLING");
+fn plus_one(x: i32) -> i32 {
+    x + 1
 }
