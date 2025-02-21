@@ -1,5 +1,14 @@
-use std::io;
+use std::{io, ptr::null};
+use clap::Parser;
 
+#[derive(Parser)]
+#[command(version, about, long_about = None)]
+struct Cli {
+    /// The pattern to look for
+    #[arg(short, long)]
+    iter_cli: String
+
+}
 
 fn fiban(x: String) -> u128 {
     let mut a: u128 = 0;
@@ -25,14 +34,12 @@ if n == a {
 
 fn main() {
 //define F0 and F1
+let args = Cli::parse();
 
-//let iterationcmdedition = std::env::args().nth(1).expect();
-
-//if iterationcmdedition != "" {
-  //  fiban(iterationcmdedition);
-//} 
+    println!("{}", fiban(args.iter_cli));
 
 
+/*
 
 println!("Please input the iteration of the fibonacci sequence.");
 
@@ -49,5 +56,5 @@ io::stdin()
 
 
 
-
+*/
 }
